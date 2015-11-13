@@ -1,17 +1,21 @@
 <!doctype html>
-<html ng-app>
+<html ng-app="fizzBuzzApp">
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script type="text/javascript" src="js/fizzBuzz.js"></script>
   </head>
   <body>
-    <div>
+    <div ng-controller="FizzBuzzController">
       <h1>FizzBuzz</h1>
       <p>Basic FizzBuzz using AngularJS.</p>
       <p>Enter a number, the program will print "Fizz" for multples of 3 and "Buzz" for multiples of 5. Multiples of 3 and 5 print "FizzBuzz".</p>
       <label>Number:</label>
-      <input type="number" ng-model="yourNumber" placeholder="Enter a number here">
+      <input type="number" ng-model="yourNumber" ng-change="change()" placeholder="Enter a number here">
       <hr>
-      <h1>Hello, here are the results from 1 to {{yourNumber}}!</h1>
+      <h2>Hello, here are the results from 1 to {{yourNumber}}!</h2>
+      <ul ng-repeat="value in results">
+        <li>{{value}}</li>
+      </ul>
     </div>
   </body>
 </html>
